@@ -1,0 +1,25 @@
+page-question-details {
+ion-content{
+    background-color: #e5e6e8 !important;
+}
+ .card{
+     margin: 0 ;
+     width: 100% ;
+     box-shadow: none;
+     margin-bottom: 10px;
+ }
+ .card p{
+    margin-top: 10px;
+   
+ }
+ .r-float{
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+ }
+ .answer_date{
+     float: right;
+     margin-top: 10px;
+     margin-bottom: 10px;
+ }
+}
