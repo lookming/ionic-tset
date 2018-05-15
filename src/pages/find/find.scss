@@ -1,3 +1,26 @@
 page-find {
+    ion-content{
+        background-color: #e5e6e8 !important;
+      }
+      .card {
+        margin: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        box-shadow: none;
+      }
+      .item ion-avatar {
+        margin: 0 !important;
+        margin-right: 5px !important;
+        margin-bottom: 3px !important;
+        min-height: 20px;
+        min-width: 20px;
+      }
+      .item ion-avatar .userPhoto{
+          width: 24px;
+          height: 24px;
+      }
+    .more_button{
+        float: right;
 
+    }
 }

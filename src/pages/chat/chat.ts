@@ -26,6 +26,7 @@ export class ChatPage {
 
 
   goChatDetails() {
+    console.log('11')
     this.navCtrl.push(ChatDetailsPage)
   }
 }

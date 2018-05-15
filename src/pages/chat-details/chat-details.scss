@@ -1,3 +1,60 @@
 page-chat-details {
+    .msg-time{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .msg-detaile{
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    .msg-detaile .avatar{
+        position: absolute;
+        max-width: 45px;
+        max-height:45px; 
+    }
+    .msg-detaile .avatar img{
+        width: 45px;
+        height:45px; 
+        border-radius: 50%;
+    }
+
+    .msg-detaile .content .nikeName{
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 10px;
+    }
+    .msg-detaile .content .msg-txt{
+        font-size: 16px;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: pre-wrap !important;
+    }
+    .left .content{
+        float: left;
+        padding-left: 60px;
+    }
+    .left .avatar{
+        left: 0px;
+    }
+
+    
+    .right .content{
+        float: right;
+        padding-right: 60px;
+    }
+    .right .content .nikeName{
+        text-align: right;
+    }
+    .right .content .msg-txt{
+        background-color: rgb(19, 231, 12);
+    }
+    .right .avatar{
+        right: 0px;
+    }
 
 }

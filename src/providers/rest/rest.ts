@@ -32,7 +32,7 @@ export class RestProvider {
   private apiUrlUpdateNickName = 'https://imoocqa.gugujiankong.com/api/account/updatenickname';
   //question
   private apiUrlQuestionSave = 'https://imoocqa.gugujiankong.com/api/question/save';
-  private apiUrlQuestionList = 'https://imoocqa.gugujiankong.com/api/question/list?index=1&number=10';
+  private apiUrlQuestionList = 'https://imoocqa.gugujiankong.com/api/question/list';
   private apiUrlGetQuestion = "https://imoocqa.gugujiankong.com/api/question/get";
   private apiUrlGetQuestionWithUser = "https://imoocqa.gugujiankong.com/api/question/getwithuser";
   private apiUrlAnswer = "https://imoocqa.gugujiankong.com/api/question/answer";
@@ -52,7 +52,26 @@ export class RestProvider {
   }
 
   /**
+   * 用户注册
+   * 
+   * @param {any} mobile 
+   * @param {any} userName 
+   * @param {any} password 
+   * @returns {Observable<string[]>} 
+   * @memberof RestProvider
+   */
+  register(mobile, userName, password): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlRegister + '?mobile=' + mobile + '&nickname=' + userName + '&password=' + password)
+  }
+
+  /**
    * 获取用户信息 
+   * 
+   * @param {any} UserId 
+   * @returns {Observable<string[]>} 
+   * @memberof RestProvider
+  /**
+   * 
    * 
    * @param {any} UserId 
    * @returns {Observable<string[]>} 
@@ -81,6 +100,7 @@ export class RestProvider {
   * @returns {Observable<string[]>} 
   * @memberof RestProvider
   */
+
   getFeeds(): Observable<string[]> {
     return this.getUrlReturn(this.apiUrlFeeds)
   }
@@ -97,6 +117,15 @@ export class RestProvider {
     return this.getUrlReturn(this.apiUrlQuestionSave + '?userId=' + userId + '&title=' + title + '&content=' + content)
   }
   /**
+   * 获取发布问题列表页
+   * 
+   * @returns {Observable<string[]>} 
+   * @memberof RestProvider
+   */
+  getQuestions(pageNum, number): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlQuestionList + '?index=' + pageNum + '&number=' + number)
+  }
+  /**
    * 问题详情页
    * 
    * @param {any} userId 
@@ -107,15 +136,15 @@ export class RestProvider {
   questionDetails(userId, questionId): Observable<string[]> {
     return this.getUrlReturn(this.apiUrlGetQuestionWithUser + "?id=" + questionId + "&userid=" + userId);
   }
-/**
- * 关注
- * 
- * @param {any} userId 
- * @param {any} questionId 
- * @returns {Observable<string[]>} 
- * @memberof RestProvider
- */
-saveFavourite(userId,questionId):Observable<string[]>{
+  /**
+   * 关注
+   * 
+   * @param {any} userId 
+   * @param {any} questionId 
+   * @returns {Observable<string[]>} 
+   * @memberof RestProvider
+   */
+  saveFavourite(userId, questionId): Observable<string[]> {
     return this.getUrlReturn(this.apiUrlSaveFavourite + "?questionid=" + questionId + "&userid=" + userId)
   }
   /**
